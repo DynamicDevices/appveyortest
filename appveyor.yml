@@ -38,7 +38,7 @@ init:
 # Ensure we don't try to convert line endings as this will cause build to fail
     - 'git config --global core.autocrlf false'
     - 'dir c:\'
-    - 'rmdir /sq c:\MinGW'
+    - 'rmdir c:\MinGW /s /q'
     - 'dir c:\'
 
 install:
