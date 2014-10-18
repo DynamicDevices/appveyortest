@@ -38,6 +38,8 @@ init:
 # Ensure we don't try to convert line endings as this will cause build to fail
     - 'git config --global core.autocrlf false'
     - 'dir c:\'
+    - 'rmdir c:\MinGW'
+    - 'dir c:\'
 
 install:
     - 'echo Retrieving Cygwin'
