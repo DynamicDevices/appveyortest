@@ -63,13 +63,5 @@ install:
 
 build_script:
     - 'echo Cygwin root is: %CYG_ROOT%'
-    - 'echo Build folder is: %APPVEYOR_BUILD_FOLDER%'
-    - 'echo Installation folder is: %MONO_INSTALL_FOLDER_WIN%'
-    - 'mkdir %MONO_INSTALL_FOLDER_WIN%'
-    - 'echo Autogen running...'
-    - '%CYG_ROOT%/bin/bash -lc "cd $APPVEYOR_BUILD_FOLDER; ./autogen.sh --prefix=$MONO_INSTALL_FOLDER_CYG --with-preview=yes"'
-    - 'echo Configure running...'
-    - '%CYG_ROOT%/bin/bash -lc "cd $APPVEYOR_BUILD_FOLDER; ./configure --host=i686-pc-mingw32"'
-    - 'echo Make running...'
-    - '%CYG_ROOT%/bin/bash -lc "cd $APPVEYOR_BUILD_FOLDER; make"'
+    - '%CYG_ROOT%/bin/bash -lc "test -n "$DJDIR" || exec 7<&0 </dev/null"'
 
