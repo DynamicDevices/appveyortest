@@ -8,6 +8,10 @@ platform:
 configuration:
     - Release
 
+# Use build cache for Cygwin installation
+#cache:
+#    C:\cygwin
+
 # Use shallow clone for speed as we only need the last commit to build     
 shallow_clone: true
 clone_depth: 1
@@ -35,6 +39,7 @@ branches:
 init:
     - 'echo Building Mono for Windows'
     - 'echo System architecture: %PLATFORM%'
+    - 'cd'
 
 install:
     - 'echo Retrieving Cygwin'
@@ -45,8 +50,10 @@ install:
     - 'setup.exe -qnNdO -R "%CYG_ROOT%" -s "%CYG_MIRROR%" -l "%CYG_CACHE%" > NUL'
     - 'echo Check Cygwin setup'
     - '$env:CYG_ROOT/bin/bash -lc "cygcheck -dc cygwin"'
-
+ 
 build_script:
+    - 'cd'
+    - 'git branch'
     - 'echo Cygwin root is: %CYG_ROOT%'
     - '$env:CYG_ROOT/bin/bash -lc "test -n "$DJDIR" || exec 7<&0 </dev/null"'
 
