@@ -41,7 +41,8 @@ init:
     - 'echo System architecture: %PLATFORM%'
     - 'echo %APPVEYOR_REPO_NAME%'
     - 'cd %APPVEYOR_BUILD_FOLDER%'
-    - 'git remote -v'
+    - 'cd c:\'
+    - 'dir .git /s'
 
 install:
     - 'echo Retrieving Cygwin'
