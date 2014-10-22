@@ -39,7 +39,9 @@ branches:
 init:
     - 'echo Building Mono for Windows'
     - 'echo System architecture: %PLATFORM%'
-    - 'cd'
+    - 'echo %APPVEYOR_REPO_NAME%'
+    - 'cd %APPVEYOR_BUILD_FOLDER%'
+    - 'git remote -v'
 
 install:
     - 'echo Retrieving Cygwin'
