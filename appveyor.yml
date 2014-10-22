@@ -13,8 +13,8 @@ configuration:
 #    C:\cygwin
 
 # Use shallow clone for speed as we only need the last commit to build     
-shallow_clone: true
-clone_depth: 1
+#shallow_clone: true
+#clone_depth: 1
 
 environment:
     global:
