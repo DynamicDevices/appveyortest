@@ -41,7 +41,7 @@ install:
     - 'nsissetup.exe /S /D=%NSIS_ROOT%'
     - 'echo Done setting up NSIS'
     - 'appveyor DownloadFile http://www.dynamicdevices.co.uk/downloads/Mono-3.10.0.zip -FileName c:\mono-binaries.zip'
-    - '7z ef c:\mono-binaries.zip'
+    - '7z ey c:\mono-binaries.zip'
     - 'ren c:\Mono-3.10.0 c:\monoinstall'
 
 build_script:
