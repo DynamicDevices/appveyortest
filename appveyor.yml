@@ -45,7 +45,7 @@ init:
 
 install:
     - 'cd c:\'
-    - 'appveyor DownloadFile http://www.dynamicdevices.co.uk/Mono-3.10.0.zip -FileName mono-binaries.zip'
+    - 'appveyor DownloadFile http://www.dynamicdevices.co.uk/downloads/Mono-3.10.0.zip -FileName mono-binaries.zip'
     - '7z e mono-binaries.zip'
     - 'dir'
 
