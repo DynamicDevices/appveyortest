@@ -20,17 +20,9 @@ configuration:
 environment:
     global:
         CYG_ROOT: C:/cygwin
-#        CYG_MIRROR: http://cygwin.mirror.constant.com
-        CYG_MIRROR: ftp://mirrors.kernel.org/sourceware/cygwin
-        CYG_CACHE: C:/cygwin/var/cache/setup
-#        MONO_INSTALL_FOLDER: C:\\monoinstall
         MONO_INSTALL_FOLDER_WIN: C:\monoinstall
         MONO_INSTALL_FOLDER_CYG: /cygdrive/c/monoinstall
-        NSIS_INSTALL_FOLDER: C:\nsis
-
-#    matrix:
-#        - 
-#            CYG_ARCH: x86
+        NSIS_ROOT: C:\nsis
 
 # Only build specific branches as master is unlikely to build
 branches:
@@ -41,7 +33,11 @@ init:
     - 'echo Appveyor Test'
     - 'echo System architecture: %PLATFORM%'
     - 'echo %APPVEYOR_REPO_NAME%'
-    - 'cd %APPVEYOR_BUILD_FOLDER%'
+    - 'echo Retrieving NSIS'
+    - 'appveyor DownloadFile "http://sunet.dl.sourceforge.net/project/nsis/NSIS 2/2.46/nsis-2.46-setup.exe" -FileName nsissetup.exe'
+    - 'echo Setting up NSIS'
+    - 'nsissetup.exe /S /D=%NSIS_ROOT%'
+    - 'echo Done setting up NSIS'
 
 install:
     - 'cd c:\'
@@ -51,4 +47,6 @@ install:
 
 build_script:
     - 'echo OK'
+
+    - '%NSIS_ROOT%\makensis /DMILESTONE=3.10.0 /DSOURCE_INSTALL_DIR=C:\monoinstall\*.* /DBUILDNUM=1.0.4 monowiz.win32.nsi
 
