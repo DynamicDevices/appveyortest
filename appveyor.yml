@@ -1,6 +1,7 @@
 # NOTE: Only Windows Server 2012 supported at this time
 #os: Windows Server 2012
 #os: Windows 8.1
+os: Unstable
 
 # NOTE: That platform relates to msbuild NOT the host OS platform
 platform:
@@ -37,6 +38,8 @@ branches:
       - mono-3.10.0-branch
 
 init:
+    - 'Cygwin'
+    ' 'dir c:\'
     - 'echo Building Mono for Windows'
     - 'echo System architecture: %PLATFORM%'
     - 'echo %APPVEYOR_REPO_NAME%'
