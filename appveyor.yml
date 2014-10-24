@@ -39,7 +39,7 @@ branches:
 
 init:
     - 'echo Cygwin'
-    - 'dir c:\'
+    - 'dir c:\cygwin'
     - 'echo Building Mono for Windows'
     - 'echo System architecture: %PLATFORM%'
     - 'echo %APPVEYOR_REPO_NAME%'
