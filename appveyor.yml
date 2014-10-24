@@ -25,9 +25,9 @@ environment:
         NSIS_ROOT: C:\nsis
 
 # Only build specific branches as master is unlikely to build
-branches:
-    only:
-      - mono-3.10.0-branch
+#branches:
+#    only:
+#      - mono-3.10.0-branch
 
 init:
     - 'echo Appveyor Test'
