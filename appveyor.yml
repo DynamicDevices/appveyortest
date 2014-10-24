@@ -47,6 +47,5 @@ install:
 
 build_script:
     - 'echo OK'
-
-    - '%NSIS_ROOT%\makensis /DMILESTONE=3.10.0 /DSOURCE_INSTALL_DIR=C:\monoinstall\*.* /DBUILDNUM=1.0.4 monowiz.win32.nsi
+    - '%NSIS_ROOT%\makensis /DMILESTONE=3.10.0 /DSOURCE_INSTALL_DIR=C:\monoinstall\*.* /DBUILDNUM=1.0.4 monowiz.win32.nsi'
 
