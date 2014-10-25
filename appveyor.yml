@@ -43,15 +43,15 @@ install:
 #    - 'appveyor DownloadFile http://www.dynamicdevices.co.uk/downloads/Mono-3.10.0.zip -FileName c:\mono-binaries.zip'
 #    - '7z ey c:\mono-binaries.zip'
 #    - 'ren c:\Mono-3.10.0 c:\monoinstall'
-     - 'mkdir c:\monoinstall'
-     - 'echo HI > c:\monoinstall\hello.txt'
+     - 'mkdir %APPVEYOR_BUILD_FOLDER%\install'
+     - 'echo HI > %APPVEYOR_BUILD_FOLDER%\install\hello.txt'
 
 build_script:
     - 'echo OK'
 #    - '%NSIS_ROOT%\makensis /DMILESTONE=3.10.0 /DSOURCE_INSTALL_DIR=C:\monoinstall\*.* /DBUILDNUM=1.0.4 monowiz.win32.nsi'
 
 artifacts:
-    - path: c:\monoinstall
-      name: test
+    - path: install
+      name: installtest
       type: zip
 
