@@ -44,7 +44,7 @@ install:
 #    - '7z ey c:\mono-binaries.zip'
 #    - 'ren c:\Mono-3.10.0 c:\monoinstall'
     - cmd: 'mkdir %APPVEYOR_BUILD_FOLDER%\install'
-    - cmd: '%CYG_ROOT%/bin/bash --login -lc "export CYGWIN=winsymlinks:native; mount $APPVEYOR_BUILD_FOLDER\install /usr/local; cd $APPVEYOR_BUILD_FOLDER; echo Hi > /usr/local/hello.txt; umount /usr/local"'
+    - cmd: '%CYG_ROOT%/bin/bash --login -lc "export CYGWIN=winsymlinks:native; mount \"$APPVEYOR_BUILD_FOLDER\install\" /usr/local; cd $APPVEYOR_BUILD_FOLDER; echo Hi > /usr/local/hello.txt; umount /usr/local"'
 
 build_script:
     - 'echo OK'
